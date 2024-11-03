@@ -44,46 +44,72 @@ int main()
         printf("1 - PEDRA\n");
         printf("2 - PAPEL\n");
         printf("3 - TESOURA\n");
-        printf("4 - MOSTRAR PLACAR\n");
-        printf("5 - SAIR DO JOGO\n");
+        printf("4 - SAIR DO JOGO\n");
         scanf("%d", &opcao);
         system("clear");
 
+        srand(time(NULL));
+        jogadaPC = rand() % 3 + 1;
         switch (opcao)
         {
         case 1:
-            srand(time(NULL));
-            jogadaPC = rand() % 3 + 1;
-
             if (jogadaPC == 1)
             {
-                printf("Você escolheu: PEDRA\n PC escolheu: PEDRA \n Vocês empataram!!!");
+                printf("Você escolheu: PEDRA \nPC escolheu: PEDRA \nVocês empataram!!!");
             }
 
             if (jogadaPC == 2)
             {
-                printf("Você escolheu: PEDRA\n PC escolheu: PAPEL\n Você perdeu!!!");
+                printf("Você escolheu: PEDRA \nPC escolheu: PAPEL \nVocê perdeu!!!");
             }
 
             if (jogadaPC == 3)
             {
-                printf("Você escolheu: PEDRA\n PC escolheu: TESOURA\n Você ganhou!!!");
+                printf("Você escolheu: PEDRA \nPC escolheu: TESOURA \nVocê ganhou!!!");
             }
             
             break;
         case 2:
+            if (jogadaPC == 1)
+            {
+                printf("Você escolheu: PAPEL \nPC escolheu: PEDRA \nVocê ganhou!!!");
+            }
+
+            if (jogadaPC == 2)
+            {
+                printf("Você escolheu: PAPEL \nPC escolheu: PAPEL \nVocês empataram!!!");
+            }
+
+            if (jogadaPC == 3)
+            {
+                printf("Você escolheu: PAPEL \nPC escolheu: TESOURA \nVocê perdeu!!!");
+            }
             break;
         case 3:
+            if (jogadaPC == 1)
+            {
+                printf("Você escolheu: TESOURA \nPC escolheu: PEDRA \nVocê perdeu!!!");
+            }
+
+            if (jogadaPC == 2)
+            {
+                printf("Você escolheu: TESOURA \nPC escolheu: PAPEL \nVocê ganhou!!!");
+            }
+
+            if (jogadaPC == 3)
+            {
+                printf("Você escolheu: TESOURA \nPC escolheu: TESOURA \nVocês empataram!!!");
+            }
             break;
         case 4:
-            break;
-        case 5:
+        printf("Encerrando o Jogo! \nOBRIGADO POR JOGAR!");
             break;
         
         default:
+        printf("Opção invalida!");
             break;
         }
-    } while (opcao != 5);
+    } while (opcao != 4);
 
     return 0;
 }
